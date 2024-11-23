@@ -1,0 +1,33 @@
+h3{
+    color : red;
+    font-size: 3em;
+}
+
+#wrap{
+    width: 1200px;
+    margin : 0 auto;
+    text-align: center;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.formDiv{
+    border: 1px solid black;
+    width: 500px;
+    margin:0 auto;
+    padding : 10px;
+    font-size: 1.5em;
+}
+
+.formDiv input[type="text"]{
+    width: 150px;
+}
+.formDiv input[type="password"]{
+    width: 200px;
+}
+
+.title{
+    font-size: 2em;
+}
