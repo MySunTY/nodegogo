@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titles.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div id="wrap">
+        <a href="/showPost" class="title"><b>나의 블로그</b></a>
+        <div class="menu">
+            <ul>
+                <li class="list">
+                    <a href="#">HOME</a>
+                </li>
+                <li class="list">
+                    <a href="#">개인정보 변경</a>
+                </li>
+                <li class="list">
+                    <a href="#">LogOut</a>
+                </li>
+                
+            </ul>
+        </div>
+        <%- body %>
+        
+    </div>
+    
+</body>
+</html>

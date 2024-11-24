@@ -1,0 +1,9 @@
+<a href="/createPost">글 작성하러 가기</a>
+
+<ul>
+    <% post.forEach( posts =>{ %>
+        <li>
+            <a href="#"><%= posts.title %></a>
+        </li>
+    <%})%>
+</ul>

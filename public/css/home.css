@@ -1,0 +1,15 @@
+.menu{
+    font-size: 1.5em;
+    width: 700px;
+    margin: auto;
+}
+
+.menu ul li{
+    list-style: none;
+    
+}
+
+.list{
+    width: 150px;
+    display: inline-block;
+}
