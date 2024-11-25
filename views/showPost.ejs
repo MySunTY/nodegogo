@@ -1,9 +1,16 @@
 <a href="/createPost">글 작성하러 가기</a>
 
-<ul>
-    <% post.forEach( posts =>{ %>
-        <li>
-            <a href="#"><%= posts.title %></a>
-        </li>
-    <%})%>
-</ul>
+<div class="post">
+    <ul>
+            <li><b>제목</b></li>
+        <% post.forEach( posts =>{ %>
+            <li>
+                <a href="/showOne/<%= posts._id %>" class="postTitle"><%= posts.title %></a>
+                <a href="/updateOne/<%= posts._id %>">
+                    <button>수정</button>
+                </a>
+                <a href="#">삭제</a>
+            </li>
+        <%})%>
+    </ul>
+</div>

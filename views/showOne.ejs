@@ -1,0 +1,13 @@
+<table>
+    <tr>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성시간</th>
+    </tr>
+    <tr>
+        <td><%= post.title%></td>
+        <td><%= post.content%></td>
+        <td><%= post.createTime.toLocaleString()%></td>
+    </tr>
+</table>
+<a href="/showPost">전체 게시글 보러 가기</a>

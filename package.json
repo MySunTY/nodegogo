@@ -15,6 +15,7 @@
     "express": "^4.21.1",
     "express-async-handler": "^1.2.0",
     "express-ejs-layouts": "^2.5.1",
+    "express-method-override": "^0.0.3",
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7"
   }

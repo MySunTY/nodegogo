@@ -1,0 +1,10 @@
+<h3>게시글 수정하기</h3>
+<div class="formDiv">
+    <form action="/updateOne/<%=post._id %>?_method=PUT" method="POST">
+        <label for="title"><b>글 제목</b></label>
+        <input type="text" name="title" id="title" value="<%= post.title %>"><br>
+
+        <textarea name="content" id="content" cols="40" rows="10"><%= post.content %></textarea><br>
+        <input type="submit" value="글 수정하기">
+    </form>
+</div>

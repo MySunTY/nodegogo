@@ -72,8 +72,28 @@ router.post("/createPost",asyncHandler(async(req,res)=>{
     });
 
     res.redirect("/showPost");
+}));
+
+router.get("/showOne/:id",asyncHandler(async(req,res)=>{
+    const titles = {
+        title: "선택된 게시글 보기"
+    }
+    const post = await Post.findById(req.params.id);
+    res.render("showOne",{titles,post,layout:homeLayout});
 }))
 
+router.get("/updateOne/:id",asyncHandler(async(req,res)=>{
+    const titles = {
+        title: "게시글 수정 페이지"
+    }
+    const post = await Post.findById(req.params.id);
+    res.render("updateOne", {titles,post, layout:homeLayout});
+}))
 
+router.put("/updateOne/:id",asyncHandler(async(req,res)=>{
+    
+    await Post.findByIdAndUpdate(req.params.id,{title: req.body.title, content: req.body.content, createTime: Date.now()});
+    res.redirect("/showPost");
+}))
 
 module.exports = router;

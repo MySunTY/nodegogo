@@ -13,3 +13,27 @@
     width: 150px;
     display: inline-block;
 }
+
+.post{
+    margin:  auto;
+    border : 1px solid black;
+    width: 800px;
+    
+}
+
+.post ul li{
+
+    list-style: none;
+    font-size: 1.5em;
+}
+.postTitle{
+    width: 500px;
+}
+
+table{
+    margin: auto;
+}
+
+th, td{
+    border: 1px solid black;
+}
