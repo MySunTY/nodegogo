@@ -9,7 +9,10 @@
                 <a href="/updateOne/<%= posts._id %>">
                     <button>수정</button>
                 </a>
-                <a href="#">삭제</a>
+                <form action="/deleteOne/<%= posts._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="삭제">
+                </form>
+                
             </li>
         <%})%>
     </ul>

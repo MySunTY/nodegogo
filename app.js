@@ -4,6 +4,7 @@ const port = 3000;
 const expressLayouts = require("express-ejs-layouts");
 const dbConnect = require("./config/db");
 const methodOverride = require("express-method-override");
+const cookieParser = require("cookie-parser");
 
 dbConnect();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 
 
 app.use("/",require("./routes/main"));

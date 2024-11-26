@@ -5,6 +5,8 @@ const mainLayout = "../views/layouts/main";
 const homeLayout = "../views/layouts/home";
 const User = require("../models/user");
 const Post = require("../models/post");
+const jwt = require("jsonwebtoken");
+const jwtSecret = process.env.JWT_SECRET;
 
 router.get("/",asyncHandler(async(req,res)=>{
     const titles = {
@@ -44,8 +46,11 @@ router.post("/login",asyncHandler(async(req,res)=>{
     if(password != user.password){
         return res.send("비밀번호를 확인해주세요");
     }
+    const token = jwt.sign({id : user._id},jwtSecret,()=>{console.log("토큰이 발급되었습니다")});
+    res.cookie("token",token,{httpOnly:true});
     
-    res.render("showPost",{titles,post,layout:homeLayout});
+    //res.render("showPost",{titles,post,layout:homeLayout});
+    res.redirect("/showPost");
     
 }));
 
@@ -95,5 +100,16 @@ router.put("/updateOne/:id",asyncHandler(async(req,res)=>{
     await Post.findByIdAndUpdate(req.params.id,{title: req.body.title, content: req.body.content, createTime: Date.now()});
     res.redirect("/showPost");
 }))
+
+router.delete("/deleteOne/:id", asyncHandler(async(req,res)=>{
+    await Post.deleteOne({_id : req.params.id});
+    res.redirect("/showPost");
+}))
+
+router.get("/logout",(req,res)=>{
+    res.clearCookie("token");
+    res.redirect("/");
+})
+
 
 module.exports = router;
